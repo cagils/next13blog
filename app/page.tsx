@@ -2,6 +2,8 @@
 import { prisma } from "@/prisma/db";
 import Markdown from "markdown-to-jsx";
 
+export const revalidate = 2;
+
 export default async function Home() {
   const posts = await prisma.post.findMany({
     orderBy: {
